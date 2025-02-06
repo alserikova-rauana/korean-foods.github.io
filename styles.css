@@ -1,232 +1,174 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: black;
-    color: white;
-  }
-  
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    z-index: 1000;
-  }
-  
-  nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-  }
-  
-  nav ul li {
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 18px;
-    transition: color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    color: #e67e22;
-  }
-  
-  .секция_главная {
-    position: relative;
-    height: 100vh;
-    background: url('img/1.jpg') no-repeat center center/cover;
-  }
-  
-  .оверлей {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  .секция_главная h1,
-  .оверлей p,
-  .кнопка {
-    animation: fadeIn 1.5s ease-out;
-  }
-  
-  .секция_главная h1 {
-    font-size: 60px;
-  }
-  
-  .секция_главная p {
-    font-size: 20px;
-  }
-  
-  .кнопка {
-    background-color: #e67e22;
-    padding: 5px 8px;  
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 13px;  
-    color: white;
-    transition: background-color 0.3s ease;
-  }
-  
-  .кнопка:hover {
-    background-color: #d35400;
-  }
-  
-  .секция_о_нас,
-  .секция_меню {
-    padding: 50px 0;
-    text-align: center;
-    color: white;
-    opacity: 0;
-    animation: fadeInSection 1.5s ease-out forwards;
-  }
-  
-  .секция_о_нас h2,
-  .секция_меню h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-  }
-  
-  .секция_о_нас p,
-  .секция_меню p {
-    font-size: 18px;
-    color: #fff7f7;
-  }
-  
-  .секция_о_нас {
-    animation-delay: 1s;
-  }
-  
-  .секция_меню {
-    animation-delay: 1.5s;
-  }
-  
-  .пункты_меню {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  
-  .пункт_меню {
-    width: 30%;
-    background-color: #f9f9f9;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    animation: slideUp 0.6s ease-out forwards;
-  }
-  
-  .пункт_меню:nth-child(odd) {
-    animation-delay: 0.5s;
-  }
-  
-  .пункт_меню:nth-child(even) {
-    animation-delay: 0.7s;
-  }
-  
-  .пункт_меню h3 {
-    font-size: 24px;
-    background-color: #f4f4f4;
-    color: #000000;
-    margin-bottom: 10px;
-  }
-  
-  .пункт_меню p {
-    font-size: 16px;
-    color: #000000;
-  }
-  
-  .пункт_меню:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
     }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
+
+    /* Навигация */
+    nav {
+      background-color: #333;
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
     }
-  }
-  
-  @keyframes fadeInSection {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
     }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
+
+    nav ul li {
+      margin: 0 20px;
     }
-  }
-  
-  @keyframes slideUp {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
     }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
+
+    nav ul li a:hover {
+      color: #e67e22;
     }
-  }
-  .секция_контакты {
-    background: #000000;
-    padding: 50px 0;
-    color: rgb(240, 237, 237);
-    text-align: center;
-  }
+
+    /* Секция */
+    section {
+      padding: 100px 20px;
+      height: 100vh;
+    }
+
+    .секция_главная {
+      background-color: #444;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .секция_о_нас {
+      background-color: #555;
+      color: white;
+    }
+
+    .секция_меню {
+      background-color: #666;
+      color: white;
+    }
+
+    .секция_контакты {
+      background-color: #777;
+      color: white;
+    }
+
+    /* Кнопки */
+    .кнопка {
+      background-color: #e67e22;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    .кнопка:hover {
+      background-color: #d35400;
+    }
+
+    /* Контент */
+    .контакты_информация {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .контакт {
+      background: #070707;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#секция_главная" class="nav-link">Главная</a></li>
+      <li><a href="#секция_о_нас" class="nav-link">О нас</a></li>
+      <li><a href="#секция_контакты" class="nav-link">Контакты</a></li>
+    </ul>
+  </nav>
   
-  .секция_контакты h2 {
-    margin-bottom: 20px;
-  }
-  
-  .контакты_информация {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-  }
-  
-  .контакт {
-    background: #070707;
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .контакт h3 {
-    margin-bottom: 20px;
-  }
-  
-  .контакт a {
-    color: #e67e22;
-    text-decoration: none;
-  }
-  
-  .контакт a:hover {
-    color: #d35400;
-  }
+  <section id="секция_главная" class="секция_главная">
+    <div class="оверлей">
+      <h1>Добро пожаловать!</h1>
+      <p>Здесь можно познакомиться с нашим сайтом.</p>
+      <a href="#" class="кнопка">Подробнее</a>
+    </div>
+  </section>
+
+  <section id="секция_о_нас" class="секция_о_нас">
+    <h2>О нас</h2>
+    <p>Мы - команда профессионалов, которые создают лучший контент для вас.</p>
+  </section>
+
+  <section id="секция_меню" class="секция_меню">
+    <h2>Наше меню</h2>
+    <p>Посмотрите, что мы предлагаем!</p>
+  </section>
+
+  <section id="секция_контакты" class="секция_контакты">
+    <h2>Контакты</h2>
+    <div class="контакты_информация">
+      <div class="контакт">
+        <h3>Адрес</h3>
+        <p>г. Алматы, Казахстан</p>
+      </div>
+      <div class="контакт">
+        <h3>Телефон</h3>
+        <p><a href="tel:+123456789">+123 456 789</a></p>
+      </div>
+      <div class="контакт">
+        <h3>Электронная почта</h3>
+        <p><a href="mailto:info@example.com">info@example.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // JavaScript арқылы сілтемелердің әдепкі әрекетін өшіру
+    document.querySelectorAll('.nav-link').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault(); // Сілтемені басқанда бет жаңармайды
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        
+        // Жоғарыдан навигацияның биіктігін алып, бетте сәл төмен түсіріп жылжу
+        window.scrollTo({
+          top: targetSection.offsetTop - document.querySelector('nav').offsetHeight,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
   
